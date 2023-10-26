@@ -10,7 +10,7 @@ const Card = (props)=> {
             <div>
             <h2> name: {props.name}</h2>
             </div>
-            <div>
+            <div className="imgBx">
             <img src={props.bandera} alt="" width="300" height="200"/>
             </div>
             <div>
