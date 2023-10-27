@@ -38,8 +38,8 @@ const SearchBar = ()=> {
         <div className="search-box">
             
                 <input placeholder="Busqueda" type="text" value={name} onChange={handleChange}/>
-                <button onClick={onSearch}>Buscar</button>
-                <button onClick={reset}>Reset</button>
+                <button onClick={onSearch} className="botonee search-button">Buscar</button>
+                <button onClick={reset} className="botonee reset-button">Reset</button>
                 
             
         </div>

@@ -1,9 +1,12 @@
 const axios = require("axios");
-const {Country} = require("../db")
+const {Country, Activity} = require("../db")
 
 const GetCountryID = async (id) => {
 
-    const findID = await Country.findByPk(id)
+    const findID = await Country.findByPk(id, {
+        include: Activity,
+        
+    })
 
     if (findID) {
         return {
@@ -15,6 +18,7 @@ const GetCountryID = async (id) => {
             subregion: findID.subregion,
             area: findID.area,
             poblacion: findID.poblacion,
+            activities: findID.Activities,
 
             
 

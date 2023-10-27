@@ -2,6 +2,7 @@ import axios from "axios"
 
 export const GET_COUNTRIES = "GET_COUNTRIES"
 export const GET_COUNTRYNAME = "GET_COUNTRYNAME"
+export const ORDER = "ORDER"
 
 
 
@@ -26,6 +27,16 @@ export const getCountrybyName=(name)=>{
             window.alert('¡Pais no encontrado!');
         }
        
+
+    }
+}
+
+export const OrderCountries = (order)=>{
+    return  (disptach)=> {
+        return disptach({
+            type: ORDER,
+            payload: order
+        })
 
     }
 }

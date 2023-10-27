@@ -41,11 +41,21 @@ const GoBack = () => {
         </div>
         <img src={country.bandera} alt="" ></img>
         <br></br>
-        <h2>Capital: {country.capital}</h2>
+        <div className="overlay">
+        {country.capital ? (
+          <h2>Capital: {country.capital}</h2>
+        ) : (
+          <h2>Capital: No disponible</h2>
+        )}
         <h2>Continente: {country.continente}</h2>
-        <h2>Subregion: {country.subregion}</h2>
+        {country.subregion ? (
+          <h2>Subregion: {country.subregion}</h2>
+        ) : (
+          <h2>Subregion: No disponible</h2>
+        )}
         <h2>Area: {country.area}</h2>
         <h2> Poblacion: {country.poblacion}</h2>
+        </div>
             <button className="btn" onClick={GoBack}>Volver</button>
             </div>
         </div>

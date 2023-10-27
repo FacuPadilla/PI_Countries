@@ -8,7 +8,8 @@ const CreateAct = async (name, Dificultad, Duracion, Temporada, paises) => {
         if (paises && paises.length > 0) {
             // Busca los países por id en la base de datos
             const selectedCountries = await Country.findAll({
-                where: { id: paises }
+                where: { id: paises },
+                
             });
 
             // Establece la relación entre la actividad y los países

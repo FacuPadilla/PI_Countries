@@ -1,8 +1,15 @@
-const {Activity} = require("../db");
+const {Activity, Country} = require("../db");
 
 const GetAllacts = async ()=> {
 
-    const Act = await Activity.findAll()
+    const Act = await Activity.findAll({
+        include: [
+            {
+                model:Country,
+                through: "Country_Activity"
+            }
+        ]
+    })
 
     return [...Act]
 

@@ -8,10 +8,10 @@ const Card = (props)=> {
         
         <div className="card-container">
             <div>
-            <h2> name: {props.name}</h2>
+            <h1>  {props.name}</h1>
             </div>
-            <div className="imgBx">
-            <img src={props.bandera} alt="" width="300" height="200"/>
+            <div className="bandera">
+            <figure><img src={props.bandera} alt="" width="300" height="200" /></figure>
             </div>
             <div>
                 <h2>continente: {props.continente}</h2>
