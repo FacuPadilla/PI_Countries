@@ -9,6 +9,16 @@ const GetCountryID = async (id) => {
     })
 
     if (findID) {
+        const activityData = findID.Activities.map((activity) => ({
+            name: activity.name,
+            Duracion: activity.Duracion,
+            Dificultad: activity.Dificultad,
+            Temporada: activity.Temporada,
+          }));
+
+        
+
+
         return {
             id: findID.id,
             name: findID.name,
@@ -18,7 +28,7 @@ const GetCountryID = async (id) => {
             subregion: findID.subregion,
             area: findID.area,
             poblacion: findID.poblacion,
-            activities: findID.Activities,
+            activities: activityData,
 
             
 

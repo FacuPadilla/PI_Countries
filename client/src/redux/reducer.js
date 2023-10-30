@@ -1,6 +1,6 @@
-import { GET_COUNTRIES, GET_COUNTRYNAME, ORDER} from "./actions"
+import { GET_COUNTRIES, GET_COUNTRYNAME, ORDER, FILT_CONTINENTE} from "./actions"
 
-let initialState = {allCountries: [], countriesCopy:[]}
+let initialState = {allCountries: [], countriesCopy:[], countryFilter:[]}
 
 function rootReducer(state = initialState, action){
     switch(action.type){
@@ -31,11 +31,18 @@ function rootReducer(state = initialState, action){
      }
      return { ...state, allCountries: copy };
 
-
+   case FILT_CONTINENTE:
+    const copia = [...state.countriesCopy]
+    if (action.payload === "all") {
+        return { ...state, allCountries: copia };
+      } else {
+         const filtercountrys = copia.filter((country) => country.continente.includes(action.payload));
+        console.log(filtercountrys)
+        return { ...state, allCountries: filtercountrys };
+      }
 
         default: 
-        return {...state}
-    }
+        return state
 }
-
+}
 export default rootReducer

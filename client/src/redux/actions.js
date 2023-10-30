@@ -3,6 +3,7 @@ import axios from "axios"
 export const GET_COUNTRIES = "GET_COUNTRIES"
 export const GET_COUNTRYNAME = "GET_COUNTRYNAME"
 export const ORDER = "ORDER"
+export const FILT_CONTINENTE = "FILT_CONTINENTE"
 
 
 
@@ -38,5 +39,16 @@ export const OrderCountries = (order)=>{
             payload: order
         })
 
+    }
+}
+
+export const FiltContinents = (cont)=> {
+    console.log(cont)
+    return (dispatch)=> {
+        return dispatch({
+            type: FILT_CONTINENTE,
+            payload: cont
+
+        })
     }
 }

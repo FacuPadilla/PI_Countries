@@ -55,6 +55,22 @@ const GoBack = () => {
         )}
         <h2>Area: {country.area}</h2>
         <h2> Poblacion: {country.poblacion}</h2>
+        <h2>Actividades:</h2>
+          <ul>
+            {country.activities && country.activities.length > 0 ? (
+              country.activities.map((activity, index) => (
+                <li key={index}>
+                  <h3>Actividad {index + 1}:</h3>
+                  <p>Nombre: {activity.name}</p>
+                  <p>Duración: {activity.Duracion}</p>
+                  <p>Dificultad: {activity.Dificultad}</p>
+                  <p>Temporada: {activity.Temporada}</p>
+                </li>
+              ))
+            ) : (
+              <p>No hay actividades disponibles</p>
+            )}
+          </ul>
         </div>
             <button className="btn" onClick={GoBack}>Volver</button>
             </div>
