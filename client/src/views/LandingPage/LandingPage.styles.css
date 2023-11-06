@@ -11,6 +11,45 @@ p{
 }
 .titulo {
     font-size: 45px;
+    color: #fcc23f;
     
 }
+
+.nadas{
+    margin-top: 15px;
+    background:#997113;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+  }
+  .nadas:hover{
+    background:black;
+    color:#fcc23f;
+  }
+  .nadas:before,.nadas:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:4px;
+    width:0;
+    background:#fcc23f;
+    transition:400ms ease all;
+  }
+  .nadas:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .nadas:hover:before,.nadas:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
 

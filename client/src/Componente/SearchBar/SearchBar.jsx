@@ -2,6 +2,7 @@ import "./SearchBar.styles.css"
 import { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { getCountrybyName, getCountries } from "../../redux/actions";
+import {Link} from "react-router-dom"
 
 
 const SearchBar = ()=> {
@@ -35,11 +36,15 @@ const SearchBar = ()=> {
 
 
     return (
-        <div className="search-box">
+        <div className="searchbars">
             
-                <input placeholder="Busqueda" type="text" value={name} onChange={handleChange}/>
-                <button onClick={onSearch} className="botonee search-button">Buscar</button>
-                <button onClick={reset} className="botonee reset-button">Reset</button>
+                <input className="botonees" placeholder="Busqueda" type="text" value={name} onChange={handleChange}/>
+                <button onClick={onSearch} className="botonee">Buscar</button>
+                <button onClick={reset} className="botonee">Reset</button>
+                <Link to="/form">
+                  <button className="botonee">Crear Actividad</button>
+                </Link>
+
                 
             
         </div>

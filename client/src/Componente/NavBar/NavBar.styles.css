@@ -1,4 +1,10 @@
 .containerNav{ 
-    width: 1800px;
+    display: flex;
+    justify-content: space-between; /* Esto distribuirá los elementos con el máximo espacio entre ellos */
+    align-items: center;
+}
+.elementoo{
+    margin-left: 250px;
+    margin-right: 300px;
 }
 

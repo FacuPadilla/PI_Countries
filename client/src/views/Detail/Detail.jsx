@@ -31,7 +31,7 @@ const GoBack = () => {
     
     return(
         <div>
-            <h1 className="h1"> Estas en el detalle de {country.name}</h1>
+            <h1 className="h1ss"> Estas en el detalle de {country.name}</h1>
             <div className="container">
             <div className="divs">
         <h2>
@@ -62,7 +62,7 @@ const GoBack = () => {
                 <li key={index}>
                   <h3>Actividad {index + 1}:</h3>
                   <p>Nombre: {activity.name}</p>
-                  <p>Duración: {activity.Duracion}</p>
+                  <p>Duración: {activity.Duracion}hs</p>
                   <p>Dificultad: {activity.Dificultad}</p>
                   <p>Temporada: {activity.Temporada}</p>
                 </li>

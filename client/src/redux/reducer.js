@@ -1,6 +1,6 @@
-import { GET_COUNTRIES, GET_COUNTRYNAME, ORDER, FILT_CONTINENTE} from "./actions"
+import { GET_COUNTRIES, GET_COUNTRYNAME, ORDER, FILT_CONTINENTE, FILT_ACT, GET_ACT} from "./actions"
 
-let initialState = {allCountries: [], countriesCopy:[], countryFilter:[]}
+let initialState = {allCountries: [], countriesCopy:[], countryFilter:[], AllActs:[]}
 
 function rootReducer(state = initialState, action){
     switch(action.type){
@@ -40,6 +40,20 @@ function rootReducer(state = initialState, action){
         console.log(filtercountrys)
         return { ...state, allCountries: filtercountrys };
       }
+
+      case FILT_ACT:
+        const copiass = [...state.countriesCopy];
+  if (action.payload === "all") {
+    return { ...state, allCountries: copiass };
+  } else {
+    const filtActs = copiass.filter((country) => {
+      return country.Activities.some(activity => activity.name === action.payload);
+    });
+    console.log(filtActs);
+    return { ...state, allCountries: filtActs };
+  }
+        case GET_ACT:
+          return {...state, AllActs: action.payload}
 
         default: 
         return state

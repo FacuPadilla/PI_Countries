@@ -44,11 +44,11 @@ const Cards = ()=> {
             })}
 
         </div>
-        <p>Estas en la pagina {currentPage}</p>
+        <p className="psss">Estas en la pagina {currentPage}</p>
     <div>
         {/* Botón para la página anterior */}
         <button
-          
+          className="wuu"
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
@@ -63,7 +63,7 @@ const Cards = ()=> {
         {Array.from({ length: Math.ceil(country.length / perPage) }, (_, index) => (
           
           <button
-          
+          className="wuu"
             key={index + 1}
             onClick={() => handlePageChange(index + 1)}
             
@@ -74,7 +74,7 @@ const Cards = ()=> {
 
         {/* Botón para la página siguiente */}
         <button
-        
+        className="wuu"
           onClick={() => handlePageChange(currentPage + 1)}
           //disabled se utiliza para deshabilitar este botón si ya estás en la última página 
           disabled={currentPage === Math.ceil(country.length / perPage)}

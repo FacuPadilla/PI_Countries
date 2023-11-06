@@ -4,6 +4,8 @@ export const GET_COUNTRIES = "GET_COUNTRIES"
 export const GET_COUNTRYNAME = "GET_COUNTRYNAME"
 export const ORDER = "ORDER"
 export const FILT_CONTINENTE = "FILT_CONTINENTE"
+export const FILT_ACT = "FILT_ACT"
+export const GET_ACT = "GET_ACT"
 
 
 
@@ -49,6 +51,25 @@ export const FiltContinents = (cont)=> {
             type: FILT_CONTINENTE,
             payload: cont
 
+        })
+    }
+}
+
+export const FiltActivity = (act)=>{
+    return (dispatch)=>{
+        return dispatch({
+            type: FILT_ACT,
+            payload: act
+        })
+    }
+}
+
+export const GetActivity = ()=>{
+    return async (dispatch)=>{
+        const res = (await axios.get(`${endpoint}/activity`)).data;
+        return dispatch({
+            type: GET_ACT,
+            payload: res
         })
     }
 }

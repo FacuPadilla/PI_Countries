@@ -1,29 +1,11 @@
-.filter-container {
-    position: relative;
-    
-  }
+.selectcss{
   
- 
-  
-  .opciones {
-    display: flex;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .opciones button {
-    padding: 10px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .opciones button:hover {
-    background: #f2f2f2;
-  }
-  
+  margin-right: 6px;
+  background-color: transparent;
+  border: 2px solid #fcc23f;
+  border-radius: 5px;
+  color: #ecebe9;
+}
+.optionss{
+  background-color: black;
+}

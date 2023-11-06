@@ -9,7 +9,7 @@ const LandingPage = ()=> {
             <p>Explora información detallada sobre todos los países del mundo.</p>
             <p>Descubre datos, estadísticas, curiosidades y mucho más.</p>
             <p>¡Viaja a través de culturas, geografías y poblaciones sin salir de tu pantalla!</p>
-            <Link to="/home"><button>ENTRAR</button></Link>
+            <Link to="/home"><button className="nadas">ENTRAR</button></Link>
         
            
         </div>

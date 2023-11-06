@@ -5,9 +5,9 @@ import Filter from "../Filter/Filter"
 const NavBar = ()=> {
     return (
         <div className="containerNav">
+            <div className="elementoo"><SearchBar/></div>
+            <div className="elementoo"><Filter/></div>
             
-            <SearchBar/>
-            <Filter/>
             
         </div>
     )

@@ -1,11 +1,13 @@
 import "./Filter.styles.css"
-import { OrderCountries, FiltContinents } from "../../redux/actions"
+import { OrderCountries, FiltContinents, FiltActivity, GetActivity} from "../../redux/actions"
 import { useDispatch, useSelector } from "react-redux"
+import { useEffect } from "react"
 
 const Filter = ()=> {
 
 
     const filtCont = useSelector((state) => state.countriesCopy)
+    const AllActs = useSelector((state)=> state.AllActs )
     const dispatch = useDispatch();
 
     const handleOrder = (event)=> {
@@ -14,29 +16,45 @@ const Filter = ()=> {
     const handleFilter = (event)=>{
         dispatch(FiltContinents(event.target.value))
     }
+
+    const handleFiltActs = (event)=> {
+        dispatch(FiltActivity(event.target.value))
+    }
+    useEffect(()=>{
+        dispatch(GetActivity())
+    }, [dispatch])
     console.log(filtCont)
+    console.log(AllActs)
 
  
     return (
-        <div>
-      <select id="orderSelect" onChange={handleOrder}>
-          <option value="A"> A-Z</option>
-          <option value="B"> Z-A</option>
+        <div className="filterrs">
+      <select className="selectcss" onChange={handleOrder}>
+        <option className="optionss" value="">Ordenar</option>
+          <option className="optionss" value="A"> A-Z</option>
+          <option className="optionss" value="B"> Z-A</option>
        </select>
        <select className="selectcss" onChange={handleOrder}>
-          <option value="C">mayor poblacion</option>
-          <option value="D">menor poblacion</option>
+        <option className="optionss" value="">Ordenar poblacion</option>
+          <option className="optionss" value="C">mayor poblacion</option>
+          <option className="optionss" value="D">menor poblacion</option>
        </select>
-       <select value={filtCont} onChange={handleFilter}>
-        <option>Filtrado</option>
-        <option value="all"> Todos</option>
-          <option value="Africa">africa</option>
-          <option value="North America">north America</option>
-          <option value="Asia"> Asia</option>
-          <option value="Oceania">Oceania</option>
-          <option value="Europe">Europe</option>
-          <option value="South America">South America</option>
-          <option value="Antarctica">Antarctica</option>
+       <select className="selectcss" value={filtCont} onChange={handleFilter}>
+        <option className="optionss" value="">Filtrado</option>
+        <option className="optionss" value="all"> Todos</option>
+          <option className="optionss" value="Africa">africa</option>
+          <option className="optionss" value="North America">north America</option>
+          <option className="optionss" value="Asia"> Asia</option>
+          <option className="optionss" value="Oceania">Oceania</option>
+          <option className="optionss" value="Europe">Europe</option>
+          <option className="optionss" value="South America">South America</option>
+          <option className="optionss" value="Antarctica">Antarctica</option>
+       </select>
+       <select className="selectcss" onChange={handleFiltActs}>
+        <option className="optionss" value="">Actividades</option>
+        {AllActs.map((act)=>{
+            return <option className="optionss" value={act.name}>{act.name}</option>
+        })}
        </select>
       
       
